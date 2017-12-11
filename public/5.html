@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	<!-- SCROLLS -->
+	<link media="screen" rel="stylesheet" href="css/jquery.tag.css" type="text/css" />
+	<link media="screen" rel="stylesheet" href="css/jquery-ui.custom.css" type="text/css" />
+	<!-- SPELLS -->
+	<script src="js/jquery.min.js"></script>
+	<script src='js/jquery-ui.min.js'></script>
+	<script src="js/jquery.tag.js"></script>
+	</head>
+	<body>
+		<h1>jTag plugin Basic demo</h1>
+		<a href="../index.html">Back to demo list</a>
+		<p>This demo sets some defaults tag<br />
+		this is obviously uses when you fetch tags from your db.<br />
+		A tag mush have a :
+		<ul>
+			<li>label</li>
+			<li>width</li>
+			<li>height</li>
+			<li>top</li>
+			<li>left</li>
+			<li>id (optional: Used for the remove callback )</li>
+		</ul>
+		I've also set the canTag to false to disable tagging.
+		</p>
+		<div>
+			<img src="outcopy.jpeg" id="img1" />
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$("#img1").tag({
+					showTag: 'always',
+					canDelete: false,
+					canTag: false,
+					defaultTags: [
+						{'id':1,'label':'Uncle jack','width':150,'height':190,'top':50,'left':160},
+						{'id':2,'label':'Baby john','width':100,'height':150,'top':250,'left':280}
+					]
+				});
+			});
+			
+		</script>
+	</body>
+</html>
+

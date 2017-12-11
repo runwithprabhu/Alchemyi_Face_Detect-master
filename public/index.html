@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>AlchemyAPI API Test</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"><!-- load bootstrap -->
+	<link media="screen" rel="stylesheet" href="css/jquery.tag.css" type="text/css" />
+	<link media="screen" rel="stylesheet" href="css/jquery-ui.custom.css" type="text/css" />
+	<link rel="stylesheet" href="css/alchemicss.css"><!-- load bootstrap -->
+	<!-- SPELLS -->
+	<script src="js/angular.min.js"></script><!-- load angular -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src='js/jquery-ui.min.js'></script>
+	<script src="js/jquery.tag.js"></script>
+	<script src="js/core.js"></script>
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
+<body ng-controller="mainController">
+	<div class="container">
+		<!-- FORM TO CREATE TODOS -->
+		<div id="todo-form" class="row">
+			<div class="col-sm-9 col-sm-offset-2 text-center">
+				<h1 class="pageHeadding">Caesars App: Image processing using AlchemyAPI</h1>
+				<form>
+				    <div class="input-group" id="textEntry">
+				    	<input id="lefile" type="file" style="display:none">
+				    	<input id="searchinput" type="text" class="form-control input-lg" placeholder="Enter Image URL or Click on Browse button to select" ng-model="formData.text">
+				    	<span class="input-group-btn">
+				    		<a class="btn btn-info btn-lg" onclick="$('input[id=lefile]').click();">Browse</a>
+				    		<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Submit</button>
+				    	</span>
+				    </div><!-- /input-group -->
+				</form>
+			</div>
+		</div>
+		<div class="container imageShowDiv">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-div imageOutput">
+					<img src="" id="imageT" style="height:250px" />
+				</div>
+			</div>
+		</div>
+		<!-- Alchamai API List for Text-->
+		<div class="container" ng-show="showResultsText">
+			<div class="row">
+				<ul class="nav nav-tabs tablistPage" role="tablist">
+				  <li role="presentation" class="active"><a href="#">jSON</a></li>
+				  <li role="presentation" class="visulaTab"><a href="#">Visual</a></li>
+				</ul>
+		        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
+			          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
+		              <div class="list-group">
+		                <a href="#" class="list-group-item active text-center faceTab">Face Tagging</a>
+		                <a href="#" class="list-group-item text-center ">Image Keywords Tagging</a>
+		                <a href="#" class="list-group-item text-center">Image Parsing</a>
+		              </div>
+		            </div>
+		          	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bhoechie-tab">
+		                <div class="bhoechie-tab-content" active ng-bind-html='imageFaceTagsJson'></div>
+		                <div class="bhoechie-tab-content" ng-bind-html='image_keywordsJson'></div>
+		                <div class="bhoechie-tab-content" ng-bind-html='imageJson'></div>
+		                <div class="bhoechie-tab-content-visual">
+						    <table class="table table-striped table-bordered">
+						      <thead>
+						        <tr>
+						          <th sortable-header col="name" data-width="15%">Name</th>
+						          <th sortable-header col="gender" data-width="15%">Gender</th>
+						          <th sortable-header col="ageGroup" data-width="15%">Age Group</th>
+						          <th sortable-header col="subTypes" data-width="15%">Subtypes</th>
+						          <th sortable-header col="website" data-width="15%">Website</th>
+						          <th sortable-header col="linkedData" data-width="15%">Linked Data</th>
+						        </tr>
+						      </thead>
+						      <tbody>
+						        <tr data-ng-repeat="fTag in imageFaceTags">
+						          <td>{{fTag.identity.name}}</td>
+						          <td>{{fTag.gender.gender}}</td>
+						          <td>{{fTag.age.ageRange}}</td>
+						          <td>
+						          	<span data-ng-repeat="subType in fTag.identity.disambiguated.subType">{{subType}}<br/></span></td>
+						          <td>{{fTag.identity.disambiguated.website}}</td>
+						          <td>{{fTag.identity.disambiguated.dbpedia}}, {{fTag.identity.disambiguated.freebase}}</td>
+						        </tr>
+						      </tbody>
+						    </table>
+		                </div>
+		                <div class="bhoechie-tab-content-visual">
+						    <table class="table table-striped table-bordered">
+						      <thead>
+						        <tr>
+						          <th sortable-header col="tag" data-width="15%">Tag</th>
+						          <th sortable-header col="score" data-width="15%">Score</th>
+						        </tr>
+						      </thead>
+						      <tbody>
+						        <tr data-ng-repeat="ikeyword in image_keywords">
+						          <td>{{ikeyword.text}}</td>
+						          <td>{{ikeyword.score}}</td>
+						        </tr>
+						      </tbody>
+						    </table>
+		                </div>
+		                <div class="bhoechie-tab-content-visual">
+						    <table class="table table-striped table-bordered">
+						      <thead>
+						        <tr>
+						          <th sortable-header col="text" data-width="15%">Image</th>
+						        </tr>
+						      </thead>
+						      <tbody>
+						        <tr>
+						          <td>{{image.text}}</td>
+							    </tr>
+						      </tbody>
+						    </table>
+		                </div>
+		            </div>
+		        </div>
+		  </div>
+		</div>
+		  <img src="/images/sgo-loading.gif" class="img-responsive" ng-show="showProgress" alt="Responsive image">
+		<br/>
+		<br/>
+	</div>
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2014 Caesars License Company, LLC. All Rights Reserved.
+      </p>
+      
+      <a href="http://localhost:10025/" class="navbar-btn btn-danger btn pull-right" target="_blank">
+      <span class="glyphicon glyphicon-star"></span>  Check Test Processing App here</a>
+    </div>
+  </div>
+
+</body>
+<script>
+var myApp,
+	selectViewIndex = 0,
+	selectTabIndex = 0;
+
+$(document).ready(function() {
+	$(".imageShowDiv").hide();
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        selectTabIndex = $(this).index();
+    	if(selectViewIndex == 1){
+    		$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active"); 
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").eq(selectTabIndex).addClass("active");
+		} else {
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(selectTabIndex).addClass("active");
+		}
+    });
+   $("ul.tablistPage>li").click(function(e) {
+    	e.preventDefault();
+    	$(this).siblings('.active').removeClass("active");
+    	$(this).addClass("active");
+    	selectViewIndex = $(this).index();
+    	if(selectViewIndex == 1){
+    		$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").eq(selectTabIndex).addClass("active");
+		} else {
+	        $("div.bhoechie-tab>div.bhoechie-tab-content-visual").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(selectTabIndex).addClass("active");
+		}
+    });
+});
+</script>
+<script type="text/javascript">
+	var data = [];
+	var settings = [];
+
+	//$images = $('.imageOutput');
+	$('input[id=lefile]').change(function(event) {
+		$('#searchinput').val($(this).val());
+		$(".imageShowDiv").show();
+		readURL(this);
+	});
+	function readURL(input) {
+
+	    if (input.files && input.files[0]) {
+	        
+	        $.each(input.files, function() {
+	            var reader = new FileReader();
+	            reader.onload = function (e) {
+	                //$images.append('<img src="'+ e.target.result+'" id="imageT" style="width:300px; height:250px" />');
+	                $("#imageT").attr("src",e.target.result);
+	            }
+	            reader.readAsDataURL(this);
+	        });
+	        //tagTheImages(input);
+	        $("#imageT").show();
+	    }
+	}
+	function tagTheImages(input) {
+
+		$("#imageT").tag({
+			showTag: 'always',
+			canDelete: false,
+			canTag: false,
+			defaultTags: [
+				{'id':1,'label':'Uncle jack','width':150,'height':190,'top':20,'left':160},
+				{'id':2,'label':'Baby john','width':100,'height':150,'top':250,'left':280}
+			]
+		});
+	}
+</script>
+</html>

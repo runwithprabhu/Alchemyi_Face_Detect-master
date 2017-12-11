@@ -1,0 +1,230 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json node-todo@0.0.0 No README data
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/skannedara/Documents/MyProject/Alkamai_Face_Detect',
+6 verbose install   [ 'express', 'path', 'os', 'fs' ] ]
+7 info preinstall node-todo@0.0.0
+8 warn package.json consolidate@0.9.1 No repository field.
+9 verbose readDependencies using package.json deps
+10 verbose cache add [ 'os@*', null ]
+11 verbose cache add name=undefined spec="os@*" args=["os@*",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'os@*',
+12 verbose parsed url   path: 'os@*',
+12 verbose parsed url   href: 'os@*' }
+13 verbose cache add [ 'fs@*', null ]
+14 verbose cache add name=undefined spec="fs@*" args=["fs@*",null]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: 'fs@*',
+15 verbose parsed url   path: 'fs@*',
+15 verbose parsed url   href: 'fs@*' }
+16 verbose already installed skipping express@~4.7.2 /Users/skannedara/Documents/MyProject/Alkamai_Face_Detect
+17 verbose cache add name="os" spec="*" args=["os","*"]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: '*',
+18 verbose parsed url   path: '*',
+18 verbose parsed url   href: '*' }
+19 verbose addNamed [ 'os', '*' ]
+20 verbose addNamed [ null, '*' ]
+21 verbose cache add name="fs" spec="*" args=["fs","*"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '*',
+22 verbose parsed url   path: '*',
+22 verbose parsed url   href: '*' }
+23 verbose addNamed [ 'fs', '*' ]
+24 verbose addNamed [ null, '*' ]
+25 verbose cache add [ 'path@*', null ]
+26 verbose cache add name=undefined spec="path@*" args=["path@*",null]
+27 verbose parsed url { protocol: null,
+27 verbose parsed url   slashes: null,
+27 verbose parsed url   auth: null,
+27 verbose parsed url   host: null,
+27 verbose parsed url   port: null,
+27 verbose parsed url   hostname: null,
+27 verbose parsed url   hash: null,
+27 verbose parsed url   search: null,
+27 verbose parsed url   query: null,
+27 verbose parsed url   pathname: 'path@*',
+27 verbose parsed url   path: 'path@*',
+27 verbose parsed url   href: 'path@*' }
+28 silly lockFile 991cd6b3-os os@*
+29 verbose lock os@* /Users/skannedara/.npm/991cd6b3-os.lock
+30 silly lockFile d8bf140d-fs fs@*
+31 verbose lock fs@* /Users/skannedara/.npm/d8bf140d-fs.lock
+32 verbose cache add name="path" spec="*" args=["path","*"]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: '*',
+33 verbose parsed url   path: '*',
+33 verbose parsed url   href: '*' }
+34 verbose addNamed [ 'path', '*' ]
+35 verbose addNamed [ null, '*' ]
+36 silly lockFile 37776eef-path path@*
+37 verbose lock path@* /Users/skannedara/.npm/37776eef-path.lock
+38 silly addNameRange { name: 'os', range: '*', hasData: false }
+39 silly addNameRange { name: 'fs', range: '*', hasData: false }
+40 silly addNameRange { name: 'path', range: '*', hasData: false }
+41 verbose request where is /os
+42 verbose request registry http://registry.npmjs.org/
+43 verbose request id 7a7e954a334908c4
+44 verbose url raw /os
+45 verbose url resolving [ 'http://registry.npmjs.org/', './os' ]
+46 verbose url resolved http://registry.npmjs.org/os
+47 verbose request where is http://registry.npmjs.org/os
+48 info trying registry request attempt 1 at 11:48:27
+49 http GET http://registry.npmjs.org/os
+50 verbose request where is /fs
+51 verbose request registry http://registry.npmjs.org/
+52 verbose url raw /fs
+53 verbose url resolving [ 'http://registry.npmjs.org/', './fs' ]
+54 verbose url resolved http://registry.npmjs.org/fs
+55 verbose request where is http://registry.npmjs.org/fs
+56 info trying registry request attempt 1 at 11:48:27
+57 verbose etag "3UQWMMZD15TH5WUAUG7KMSL14"
+58 http GET http://registry.npmjs.org/fs
+59 verbose request where is /path
+60 verbose request registry http://registry.npmjs.org/
+61 verbose url raw /path
+62 verbose url resolving [ 'http://registry.npmjs.org/', './path' ]
+63 verbose url resolved http://registry.npmjs.org/path
+64 verbose request where is http://registry.npmjs.org/path
+65 info trying registry request attempt 1 at 11:48:27
+66 verbose etag "9DC62W8H3P33ZN8HEYSYCNWJG"
+67 http GET http://registry.npmjs.org/path
+68 http 304 http://registry.npmjs.org/path
+69 silly registry.get cb [ 304,
+69 silly registry.get   { date: 'Wed, 12 Nov 2014 19:48:27 GMT',
+69 silly registry.get     via: '1.1 varnish',
+69 silly registry.get     'last-modified': 'Wed, 12 Nov 2014 19:48:27 GMT',
+69 silly registry.get     'cache-control': 'max-age=60',
+69 silly registry.get     etag: '"9DC62W8H3P33ZN8HEYSYCNWJG"',
+69 silly registry.get     age: '59',
+69 silly registry.get     connection: 'keep-alive',
+69 silly registry.get     'x-served-by': 'cache-sjc3127-SJC',
+69 silly registry.get     'x-cache': 'HIT',
+69 silly registry.get     'x-cache-hits': '1',
+69 silly registry.get     'x-timer': 'S1415821707.475710,VS0,VE0',
+69 silly registry.get     vary: 'Accept' } ]
+70 verbose etag http://registry.npmjs.org/path from cache
+71 silly addNameRange number 2 { name: 'path', range: '*', hasData: true }
+72 silly addNameRange versions [ 'path', [ '0.4.9' ] ]
+73 verbose addNamed [ 'path', '0.4.9' ]
+74 verbose addNamed [ '0.4.9', '0.4.9' ]
+75 silly lockFile f9561765-path-0-4-9 path@0.4.9
+76 verbose lock path@0.4.9 /Users/skannedara/.npm/f9561765-path-0-4-9.lock
+77 silly lockFile f9561765-path-0-4-9 path@0.4.9
+78 silly lockFile f9561765-path-0-4-9 path@0.4.9
+79 silly lockFile 37776eef-path path@*
+80 silly lockFile 37776eef-path path@*
+81 http 304 http://registry.npmjs.org/fs
+82 silly registry.get cb [ 304,
+82 silly registry.get   { date: 'Wed, 12 Nov 2014 19:48:27 GMT',
+82 silly registry.get     via: '1.1 varnish',
+82 silly registry.get     'last-modified': 'Wed, 12 Nov 2014 19:48:27 GMT',
+82 silly registry.get     'cache-control': 'max-age=60',
+82 silly registry.get     etag: '"3UQWMMZD15TH5WUAUG7KMSL14"',
+82 silly registry.get     age: '0',
+82 silly registry.get     connection: 'keep-alive',
+82 silly registry.get     'x-served-by': 'cache-sjc3125-SJC',
+82 silly registry.get     'x-cache': 'MISS',
+82 silly registry.get     'x-cache-hits': '0',
+82 silly registry.get     'x-timer': 'S1415821707.474329,VS0,VE84',
+82 silly registry.get     vary: 'Accept' } ]
+83 verbose etag http://registry.npmjs.org/fs from cache
+84 silly addNameRange number 2 { name: 'fs', range: '*', hasData: true }
+85 silly addNameRange versions [ 'fs', [ '0.0.0', '0.0.2' ] ]
+86 verbose addNamed [ 'fs', '0.0.2' ]
+87 verbose addNamed [ '0.0.2', '0.0.2' ]
+88 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
+89 verbose lock fs@0.0.2 /Users/skannedara/.npm/afea0479-fs-0-0-2.lock
+90 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
+91 silly lockFile afea0479-fs-0-0-2 fs@0.0.2
+92 silly lockFile d8bf140d-fs fs@*
+93 silly lockFile d8bf140d-fs fs@*
+94 http 404 http://registry.npmjs.org/os
+95 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+95 verbose headers   'content-type': 'application/json',
+95 verbose headers   'cache-control': 'max-age=0',
+95 verbose headers   'content-length': '52',
+95 verbose headers   'accept-ranges': 'bytes',
+95 verbose headers   date: 'Wed, 12 Nov 2014 19:48:27 GMT',
+95 verbose headers   via: '1.1 varnish',
+95 verbose headers   age: '0',
+95 verbose headers   connection: 'keep-alive',
+95 verbose headers   'x-served-by': 'cache-sjc3133-SJC',
+95 verbose headers   'x-cache': 'MISS',
+95 verbose headers   'x-cache-hits': '0',
+95 verbose headers   'x-timer': 'S1415821707.475421,VS0,VE156' }
+96 silly registry.get cb [ 404,
+96 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+96 silly registry.get     'content-type': 'application/json',
+96 silly registry.get     'cache-control': 'max-age=0',
+96 silly registry.get     'content-length': '52',
+96 silly registry.get     'accept-ranges': 'bytes',
+96 silly registry.get     date: 'Wed, 12 Nov 2014 19:48:27 GMT',
+96 silly registry.get     via: '1.1 varnish',
+96 silly registry.get     age: '0',
+96 silly registry.get     connection: 'keep-alive',
+96 silly registry.get     'x-served-by': 'cache-sjc3133-SJC',
+96 silly registry.get     'x-cache': 'MISS',
+96 silly registry.get     'x-cache-hits': '0',
+96 silly registry.get     'x-timer': 'S1415821707.475421,VS0,VE156' } ]
+97 silly lockFile 991cd6b3-os os@*
+98 silly lockFile 991cd6b3-os os@*
+99 error 404 404 Not Found: os
+99 error 404
+99 error 404 'os' is not in the npm registry.
+99 error 404 You should bug the author to publish it
+99 error 404 It was specified as a dependency of 'node-todo'
+99 error 404
+99 error 404 Note that you can also install from a
+99 error 404 tarball, folder, or http url, or git url.
+100 error System Darwin 14.0.0
+101 error command "node" "/usr/local/bin/npm" "install"
+102 error cwd /Users/skannedara/Documents/MyProject/Alkamai_Face_Detect
+103 error node -v v0.10.32
+104 error npm -v 1.4.28
+105 error code E404
+106 verbose exit [ 1, true ]

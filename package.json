@@ -1,0 +1,16 @@
+{
+  "name"         : "node-todo",
+  "version"      : "0.0.0",
+  "description"  : "AlchemyAPI visual expose application.",
+  "main"         : "server.js",
+  "author"       : "Siva",
+  "dependencies" : {
+    "express"    : "~4.7.2",
+    "rimraf"     : "2.2.2",
+    "mkdirp"     : "0.3.5"
+  },
+  "repository"   : {
+    "type"            : "git",
+    "url"             : "http://github.com/npm/npm.git"
+  }
+}
